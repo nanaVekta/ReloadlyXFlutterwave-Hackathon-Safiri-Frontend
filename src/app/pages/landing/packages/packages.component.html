@@ -1,0 +1,64 @@
+<section class="header-section pb-5">
+  <div class="container">
+    <div class="row mt-3 pd-4">
+      <div class="col-sm-7">
+        <div class="header-text">
+          <h1 class="header-title">
+            Select the trip that matches your preference below
+          </h1>
+
+        </div>
+      </div>
+      <div class="col-sm-5">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="plans-section pb-5">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 mt-5">
+        <h2 class="text-bold">Available Location Packages</h2>
+      </div>
+    </div>
+
+    <div class="row mt-4" *ngIf="!hasData">
+      <div class="col-12">
+        <div class="alert alert-danger">
+          <h4 class="text-center">No locations added</h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4" *ngIf="hasData">
+      <div class="col-md-4 pb-3" *ngFor="let location of locations">
+        <div class="card shadow">
+          <img [src]="location.image" class="img-fluid card-img-top">
+          <div class="card-body">
+            <div class="package-details mt-3">
+              <div class="row">
+                <div class="col-sm-6">
+                  <h5 class="text-bold">{{location.country}}</h5>
+                </div>
+                <div class="col-sm-6">
+                  <h5 class="text-right text-bold text-danger">${{location.total_amount}}</h5>
+                </div>
+              </div>
+              <p><i class="fa fa-plane" aria-hidden="true"></i> Flight: ${{location.flight_amount}} (2-way)</p>
+              <p><i class="fa fa-bed" aria-hidden="true"></i>
+                Hotel: ${{location.hotel_amount}} (per night)</p>
+              <p><i class="fa fa-cutlery" aria-hidden="true"></i>
+                Food: ${{location.food_amount}} (per meal)</p>
+              <button class="btn btn-outline-primary mt-3">SELECT</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</section>

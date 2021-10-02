@@ -1,0 +1,32 @@
+.header-section{
+  background: url("../../../../assets/images/auth-bg.png") no-repeat center;
+  margin-top: -120px;
+}
+
+.header-text{
+  margin-top: 20%;
+}
+
+.header-title{
+  font-weight: bolder;
+  color: #fff;
+}
+
+.header-subtitle{
+  color: #fff;
+}
+
+
+.plans-section{
+  background-color: #f5f5f5;
+}
+
+.plans-section p{
+  color: grey;
+  margin: 10px 0;
+}
+
+.plans:hover{
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+

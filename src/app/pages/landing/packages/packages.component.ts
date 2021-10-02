@@ -1,14 +1,15 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
-import { NgxUiLoaderService } from 'ngx-ui-loader';
-import { Subscription } from 'rxjs';
 import { LocationService } from 'src/app/services/location.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-packages',
+  templateUrl: './packages.component.html',
+  styleUrls: ['./packages.component.scss']
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class PackagesComponent implements OnInit, OnDestroy {
 
   locations: any;
   hasData = false;
@@ -22,15 +23,16 @@ export class HomeComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    this.getFeaturedLocations();
+    this.getLocations();
   }
 
-  getFeaturedLocations() {
+  getLocations() {
     this.ngxuiloader.start();
-    const featuredSubscription = this.locationService.getFeaturedLocations().subscribe(
+    const locationSubscription = this.locationService.getLocations().subscribe(
       (data) => {
         this.responseData = data;
-        this.locations = this.responseData.body;
+        console.log(this.responseData.body.data);
+        this.locations = this.responseData.body.data;
         if(this.locations.length > 0){
           this.hasData = true;
         }
@@ -42,7 +44,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.ngxuiloader.stop();
       }
     );
-    this.subscriptions.add(featuredSubscription)
+    this.subscriptions.add(locationSubscription)
   }
 
   ngOnDestroy(){

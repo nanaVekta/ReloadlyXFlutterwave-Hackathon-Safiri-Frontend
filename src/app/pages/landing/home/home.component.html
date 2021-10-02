@@ -1,10 +1,14 @@
 <section class="header-section pb-5">
   <div class="container">
     <div class="row mt-3 pd-4">
-      <div class="col-sm-7">
+      <div class="col-sm-8">
         <div class="header-text">
-          <h1 class="header-title">Save for your next trip <br>and travel within your <br>means</h1>
-          <p class="header-subtitle">The night is dark and full of terrors. The winds of Winter. What is dead may never die. And now his watch is ended</p>
+          <h1 class="header-title">
+            Save for your next vacation, make <br>necessary travel payments all within <br> one platform.
+          </h1>
+          <p class="header-subtitle">
+            Get access to an emergency travel loan when you run out of money.
+          </p>
         </div>
       </div>
       <div class="col-sm-5">
@@ -51,12 +55,17 @@
   <div class="container">
     <div class="row pt-5 pb-5">
       <div class="col-sm-6">
-        <img src="../../../../assets/images/about.png">
+        <img src="../../../../assets/images/about.png" class="img-fluid">
       </div>
       <div class="col-sm-6 pt-5 px-5">
-        <h2 class="text-bold mt-4">Embark on budget friendly trips and carry out cost effective transaction</h2>
+        <h2 class="text-bold mt-4">
+          Save for your next vacation, make necessary travel payments all within one platform.
+        </h2>
         <p>
-          Reef sails strike colors code of conduct parley sloop yardarm square-rigged mizzen loaded to the gunwalls keel. Bilge rat scuttle gangway heave down piracy nipper pirate mizzen topmast deadlights. Aft case shot lugsail Gold Road scourge of the seven seas mutiny skysail reef bowsprit Admiral of the Black.
+          Safiri works as the digital bank for constant travellers. From the point of knowing the kind of funds to set aside, to making payments for flights, food, hotels, airtime/data, Safiri takes care of all your financial worries.
+          You will be issued a virtual dollar MasterCard to cater for all your international transactions, we will also offer you the unique opportunity to get an emergency travel loan when you overspend during your trip.
+          Beyond this, we ensure you remain financially intelligent by giving you real-time analysis of your spendings so far.
+
         </p>
         <button class="btn btn-primary">GET STARTED</button>
       </div>
@@ -69,69 +78,45 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-8 mt-5">
-        <h2 class="text-bold">Available Travel Packages</h2>
+        <h2 class="text-bold">Available Location Packages</h2>
       </div>
       <div class="col-sm-4 mt-5">
-        <h5 class="text-right">See More</h5>
+        <h5 class="text-right" style="cursor: pointer;" routerLink="packages">See More</h5>
       </div>
     </div>
-    <div class="row mt-4">
-      <div class="col-md-4 plans pb-3">
-        <img src="../../../../assets/images/package1.png" class="img-fluid">
-        <div class="package-details mt-3">
-          <div class="row">
-            <div class="col-sm-6">
-              <h5 class="text-bold">Kenya</h5>
-            </div>
-            <div class="col-sm-6">
-              <h5 class="text-right text-bold text-danger">$1,500</h5>
-            </div>
-          </div>
-          <p><i class="fa fa-plane" aria-hidden="true"></i> Flight: $873 (2-way)</p>
-          <p><i class="fa fa-bed" aria-hidden="true"></i>
-            Hotel: $242 (per night)</p>
-          <p><i class="fa fa-cutlery" aria-hidden="true"></i>
-            Food: $43 (per meal)</p>
-          <button class="btn btn-outline-primary mt-3">SELECT</button>
+
+    <div class="row mt-4" *ngIf="!hasData">
+      <div class="col-12">
+        <div class="alert alert-danger">
+          <h4 class="text-center">No locations added</h4>
         </div>
       </div>
-      <div class="col-md-4 plans pb-3">
-        <img src="../../../../assets/images/package2.png" class="img-fluid">
-        <div class="package-details mt-3">
-          <div class="row">
-            <div class="col-sm-6">
-              <h5 class="text-bold">Ghana</h5>
-            </div>
-            <div class="col-sm-6">
-              <h5 class="text-right text-bold text-danger">$1,500</h5>
-            </div>
-          </div>
-          <p><i class="fa fa-plane" aria-hidden="true"></i> Flight: $873 (2-way)</p>
-          <p><i class="fa fa-bed" aria-hidden="true"></i>
-            Hotel: $242 (per night)</p>
-          <p><i class="fa fa-cutlery" aria-hidden="true"></i>
-            Food: $43 (per meal)</p>
-          <button class="btn btn-outline-primary mt-3">SELECT</button>
-        </div>
-      </div>
-      <div class="col-md-4 plans pb-3">
-        <img src="../../../../assets/images/package3.png" class="img-fluid">
-        <div class="package-details mt-3">
-          <div class="row">
-            <div class="col-sm-6">
-              <h5 class="text-bold">Nigeria</h5>
-            </div>
-            <div class="col-sm-6">
-              <h5 class="text-right text-bold text-danger">$1,500</h5>
+    </div>
+
+    <div class="row mt-4" *ngIf="hasData">
+      <div class="col-md-4 pb-3" *ngFor="let location of locations">
+        <div class="card shadow">
+          <img [src]="location.image" class="img-fluid card-img-top">
+          <div class="card-body">
+            <div class="package-details mt-3">
+              <div class="row">
+                <div class="col-sm-6">
+                  <h5 class="text-bold">{{location.country}}</h5>
+                </div>
+                <div class="col-sm-6">
+                  <h5 class="text-right text-bold text-danger">${{location.total_amount}}</h5>
+                </div>
+              </div>
+              <p><i class="fa fa-plane" aria-hidden="true"></i> Flight: ${{location.flight_amount}} (2-way)</p>
+              <p><i class="fa fa-bed" aria-hidden="true"></i>
+                Hotel: ${{location.hotel_amount}} (per night)</p>
+              <p><i class="fa fa-cutlery" aria-hidden="true"></i>
+                Food: ${{location.food_amount}} (per meal)</p>
+              <button class="btn btn-outline-primary mt-3">SELECT</button>
             </div>
           </div>
-          <p><i class="fa fa-plane" aria-hidden="true"></i> Flight: $873 (2-way)</p>
-          <p><i class="fa fa-bed" aria-hidden="true"></i>
-            Hotel: $242 (per night)</p>
-          <p><i class="fa fa-cutlery" aria-hidden="true"></i>
-            Food: $43 (per meal)</p>
-          <button class="btn btn-outline-primary mt-3">SELECT</button>
         </div>
+
       </div>
     </div>
   </div>

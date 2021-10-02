@@ -1,3 +1,4 @@
+import { PackagesComponent } from './../../pages/landing/packages/packages.component';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -10,7 +11,8 @@ import { LandingLayoutRoutes } from './landing-layout.routing';
     RouterModule.forChild(LandingLayoutRoutes)
   ],
   declarations: [
-    HomeComponent
+    HomeComponent,
+    PackagesComponent
   ]
 })
 

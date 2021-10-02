@@ -1,5 +1,6 @@
 import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { SPINNER } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,7 @@ import { DOCUMENT } from '@angular/common';
 })
 export class AppComponent {
   title = 'frontend';
+  spinner = SPINNER.ballScaleMultiple;
 
   constructor(
     @Inject(DOCUMENT) private document: Document
