@@ -1,3 +1,4 @@
+import { LoginComponent } from './../../pages/auth/login/login.component';
 import { AccountSetupComponent } from './../../pages/auth/account-setup/account-setup.component';
 import { SignupComponent } from './../../pages/auth/signup/signup.component';
 import { Routes } from '@angular/router';
@@ -16,5 +17,9 @@ export const AuthLayoutRoutes: Routes = [
     path: 'account-setup',
     component: AccountSetupComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   }
 ]

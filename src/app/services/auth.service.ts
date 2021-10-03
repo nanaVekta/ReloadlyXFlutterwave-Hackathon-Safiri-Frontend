@@ -46,4 +46,8 @@ export class AuthService {
     return this.http.post(`${environment.apiUrl}account`, formData, {observe: 'response'});
   }
 
+  login(formData: any) {
+    return this.http.post(`${environment.apiUrl}auth/login`, formData, {observe: 'response'});
+  }
+
 }

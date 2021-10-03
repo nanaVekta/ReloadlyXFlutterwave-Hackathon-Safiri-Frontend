@@ -62,28 +62,37 @@ export class SignupComponent implements OnInit, OnDestroy {
         (response) => {
           this.ngxuiloader.stop();
           this.responseData = response;
-          const safiriSwal = Swal.mixin({
-            customClass: {
-              confirmButton: 'btn btn-primary safiri-btn',
-              cancelButton: 'btn btn-danger'
-            },
-            buttonsStyling: false
-          });
+          if(this.responseData.status === 200){
+            this.authService.addData(this.responseData.body);
+            const safiriSwal = Swal.mixin({
+              customClass: {
+                confirmButton: 'btn btn-primary safiri-btn',
+                cancelButton: 'btn btn-danger'
+              },
+              buttonsStyling: false
+            });
 
-          safiriSwal.fire({
-            title: 'Awesome',
-            text: 'You can now proceed to save for your vacation',
-            icon: 'success',
-            confirmButtonText: 'Proceed',
-            showCancelButton: false,
-            padding: '2em 5em',
-            backdrop: `rgba(0,0,0,0.8)`,
-            iconColor: `rgba(6,146,196,1)`,
-          }).then((result) => {
-            if (result.isConfirmed) {
-              this.router.navigate(['/auth/account-setup']);
-            }
-          });
+            safiriSwal.fire({
+              title: 'Awesome',
+              text: 'You can now proceed to save for your vacation',
+              icon: 'success',
+              confirmButtonText: 'Proceed',
+              showCancelButton: false,
+              padding: '2em 5em',
+              backdrop: `rgba(0,0,0,0.8)`,
+              iconColor: `rgba(6,146,196,1)`,
+              allowEscapeKey: false,
+              allowOutsideClick: false
+            }).then((result) => {
+              if (result.isConfirmed) {
+                this.router.navigate(['/auth/account-setup']);
+              }
+            });
+          }
+          else{
+            this.toastr.error('An error occured. Try again later', 'Error');
+          }
+
         },
         (error) => {
           this.ngxuiloader.stop();
