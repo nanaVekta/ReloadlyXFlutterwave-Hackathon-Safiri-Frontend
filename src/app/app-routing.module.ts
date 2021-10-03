@@ -3,6 +3,7 @@ import { LandingLayoutComponent } from './layouts/landing-layout/landing-layout.
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+import { AccountGuard, AuthGuard } from './helpers';
 
 const routes: Routes = [
   {
@@ -32,7 +33,8 @@ const routes: Routes = [
     children: [{
       path: '',
       loadChildren: () => import('./layouts/dashboard-layout/dashboard-layout.module').then(m => m.DashboardLayoutModule)
-    }]
+    }],
+    canActivate: [AuthGuard, AccountGuard]
   }
 ];
 

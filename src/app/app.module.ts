@@ -1,4 +1,6 @@
-import { HttpClientModule } from '@angular/common/http';
+import { ErrorInterceptor } from './helpers/error.interceptor';
+import { JwtInterceptor } from './helpers/jwt.interceptor';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -11,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
+import { LoginComponent } from './pages/auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +21,7 @@ import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-l
     LandingLayoutComponent,
     AuthLayoutComponent,
     DashboardLayoutComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +32,10 @@ import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-l
     ToastrModule.forRoot(),
     NgxUiLoaderModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

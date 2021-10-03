@@ -4,4 +4,5 @@ export interface UserProfile {
   last_name: string;
   email: string;
   uuid: string;
+  account_setted: number;
 }
