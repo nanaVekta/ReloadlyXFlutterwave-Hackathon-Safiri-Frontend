@@ -1,3 +1,4 @@
+import { AccountSetupComponent } from './../../pages/auth/account-setup/account-setup.component';
 import { SignupComponent } from './../../pages/auth/signup/signup.component';
 import { AuthLayoutRoutes } from './auth-layout.routing';
 import { RouterModule } from '@angular/router';
@@ -13,7 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RouterModule.forChild(AuthLayoutRoutes)
   ],
   declarations: [
-    SignupComponent
+    SignupComponent,
+    AccountSetupComponent
   ],
 })
 

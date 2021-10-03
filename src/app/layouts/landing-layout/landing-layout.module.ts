@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { HomeComponent } from 'src/app/pages/landing/home/home.component';
 import { LandingLayoutRoutes } from './landing-layout.routing';
+import { PackageDetailsComponent } from 'src/app/pages/landing/package-details/package-details.component';
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import { LandingLayoutRoutes } from './landing-layout.routing';
   ],
   declarations: [
     HomeComponent,
-    PackagesComponent
+    PackagesComponent,
+    PackageDetailsComponent
   ]
 })
 

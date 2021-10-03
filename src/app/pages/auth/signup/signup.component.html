@@ -3,9 +3,9 @@
     <div class="row mt-3 pd-4">
       <div class="col-sm-7">
         <div class="header-text">
-          <h1 class="header-title">Sign up seamlessly</h1>
+          <h1 class="header-title">A thousand miles start with a step</h1>
           <p class="header-subtitle">
-            The night is dark and full of terrors. The winds of Winter. What is dead may never die. And now his watch is ended
+            A thousand miles start with a step
           </p>
         </div>
       </div>
@@ -19,27 +19,56 @@
 <section class="py-5">
   <div class="container">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-5">
         <h2 class="text-bold">Fill in your details</h2>
-        <form>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
           <div class="form-group mt-3">
             <label for="first_name">First name</label>
-            <input type="text" class="form-control" id="first_name" placeholder="First name">
-          </div>
-          <div class="form-group  mt-3">
-            <label for="last_name">Last name</label>
-            <input type="text" class="form-control" id="last_name" placeholder="Last name">
-          </div>
-          <div class="form-group mt-3">
-            <label for="email">Email address</label>
-            <input type="email" class="form-control" id="email" placeholder="Email">
-          </div>
-          <div class="form-group mt-3">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Password">
+            <input type="text" class="form-control" id="first_name" formControlName="first_name" [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }">
+            <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
+              <div *ngIf="f.first_name.errors.required">enter a first name</div>
+              <div *ngIf="f.first_name.errors.minlength">should be more than 2 characters</div>
+              <div *ngIf="f.first_name.errors.maxlength">should not be more than 50 characters</div>
+            </div>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-block mt-3" style="width: 100%;">SIGN IN</button>
+          <div class="form-group  mt-3">
+            <label for="last_name">Last name</label>
+            <input type="text" class="form-control" id="last_name" formControlName="last_name" [ngClass]="{ 'is-invalid': submitted && f.last_name.errors }">
+            <div *ngIf="submitted && f.last_name.errors" class="invalid-feedback">
+              <div *ngIf="f.last_name.errors.required">enter a last name</div>
+              <div *ngIf="f.last_name.errors.minlength">should be more than 2 characters</div>
+              <div *ngIf="f.last_name.errors.maxlength">should not be more than 50 characters</div>
+            </div>
+          </div>
+
+          <div class="form-group mt-3">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <div>enter a valid email</div>
+            </div>
+          </div>
+
+          <div class="form-group mt-3">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+              <div *ngIf="f.password.errors.required">password is required</div>
+              <div *ngIf="f.password.errors.minlength">should be more than 6 characters</div>
+            </div>
+          </div>
+
+          <div class="form-group mt-3">
+            <label for="password_confirmation">Confirm Password</label>
+            <input type="password" class="form-control" id="password_confirmation" formControlName="password_confirmation" [ngClass]="{ 'is-invalid': submitted && f.password_confirmation.errors }">
+            <div *ngIf="submitted && f.password_confirmation.errors" class="invalid-feedback">
+              <div *ngIf="f.password_confirmation.errors.required">confirm password</div>
+              <div *ngIf="f.password_confirmation.errors.equalTo">passwords do not match</div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block safiri-btn mt-3" style="width: 100%;">SIGN IN</button>
         </form>
       </div>
       <div class="col-md-6"></div>

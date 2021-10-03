@@ -47,12 +47,19 @@
                   <h5 class="text-right text-bold text-danger">${{location.total_amount}}</h5>
                 </div>
               </div>
-              <p><i class="fa fa-plane" aria-hidden="true"></i> Flight: ${{location.flight_amount}} (2-way)</p>
-              <p><i class="fa fa-bed" aria-hidden="true"></i>
-                Hotel: ${{location.hotel_amount}} (per night)</p>
-              <p><i class="fa fa-cutlery" aria-hidden="true"></i>
-                Food: ${{location.food_amount}} (per meal)</p>
-              <button class="btn btn-outline-primary mt-3">SELECT</button>
+              <p>
+                <i class="fa fa-plane" aria-hidden="true"></i>
+                Flight: ${{location.flight_amount}} (2-way)
+              </p>
+              <p>
+                <i class="fa fa-bed" aria-hidden="true"></i>
+                Hotel: ${{location.hotel_amount}} (per night)
+              </p>
+              <p>
+                <i class="fa fa-cutlery" aria-hidden="true"></i>
+                Food: ${{location.food_amount}} (per meal)
+              </p>
+              <button class="btn btn-outline-primary mt-3" [routerLink]="['/home/packages', location.uuid]">SELECT</button>
             </div>
           </div>
         </div>

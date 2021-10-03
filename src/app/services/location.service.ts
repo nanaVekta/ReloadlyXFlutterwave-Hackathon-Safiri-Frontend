@@ -18,4 +18,8 @@ export class LocationService {
   getFeaturedLocations() {
     return this.http.get(`${environment.apiUrl}locations/featured`, {observe: 'response'});
   }
+
+  getLocation(id: string) {
+    return this.http.get(`${environment.apiUrl}locations/get/${id}`, {observe: 'response'});
+  }
 }

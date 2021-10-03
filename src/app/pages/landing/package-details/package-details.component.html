@@ -1,1 +1,33 @@
-<p>package-details works!</p>
+<section *ngIf="hasData" class="header-section pb-5" [style.background]="'url(' + location.image + ') no-repeat center center'" [style.background-size]="'cover'">
+
+</section>
+
+<section *ngIf="hasData" class="mt-5 mb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="text-bold">{{location.country}}</h1>
+        <p>{{location.description}}</p>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-12">
+        <h3 class="text-bold">Inclusion</h3>
+        <p>
+          <i class="fa fa-plane" aria-hidden="true"></i>
+          Flight: ${{location.flight_amount}} (2-way)
+        </p>
+        <p>
+          <i class="fa fa-bed" aria-hidden="true"></i>
+          Hotel: ${{location.hotel_amount}} (per night)
+        </p>
+        <p>
+          <i class="fa fa-cutlery" aria-hidden="true"></i>
+          Food: ${{location.food_amount}} (per meal)
+        </p>
+        <button class="btn btn-primary safiri-btn mt-2" routerLink="/dashboard">Save now</button>
+      </div>
+    </div>
+  </div>
+</section>

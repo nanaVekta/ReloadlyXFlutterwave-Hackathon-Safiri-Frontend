@@ -57,9 +57,9 @@
       <div class="col-sm-6">
         <img src="../../../../assets/images/about.png" class="img-fluid">
       </div>
-      <div class="col-sm-6 pt-5 px-5">
+      <div class="col-sm-6 pt-2 px-5">
         <h2 class="text-bold mt-4">
-          Save for your next vacation, make necessary travel payments all within one platform.
+          Digital bank for constant travellers
         </h2>
         <p>
           Safiri works as the digital bank for constant travellers. From the point of knowing the kind of funds to set aside, to making payments for flights, food, hotels, airtime/data, Safiri takes care of all your financial worries.
@@ -67,7 +67,7 @@
           Beyond this, we ensure you remain financially intelligent by giving you real-time analysis of your spendings so far.
 
         </p>
-        <button class="btn btn-primary">GET STARTED</button>
+        <button class="btn btn-primary safiri-btn">GET STARTED</button>
       </div>
     </div>
   </div>
@@ -112,7 +112,7 @@
                 Hotel: ${{location.hotel_amount}} (per night)</p>
               <p><i class="fa fa-cutlery" aria-hidden="true"></i>
                 Food: ${{location.food_amount}} (per meal)</p>
-              <button class="btn btn-outline-primary mt-3">SELECT</button>
+              <button class="btn btn-outline-primary mt-3"  [routerLink]="['/home/packages', location.uuid]">SELECT</button>
             </div>
           </div>
         </div>

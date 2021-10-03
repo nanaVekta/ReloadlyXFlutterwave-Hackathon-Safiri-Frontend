@@ -31,7 +31,6 @@ export class PackagesComponent implements OnInit, OnDestroy {
     const locationSubscription = this.locationService.getLocations().subscribe(
       (data) => {
         this.responseData = data;
-        console.log(this.responseData.body.data);
         this.locations = this.responseData.body.data;
         if(this.locations.length > 0){
           this.hasData = true;
