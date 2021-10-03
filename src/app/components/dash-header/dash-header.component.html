@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow navbar-expand-lg py-3 justify-content-end" id="nav">
+  <div class="container">
+    <a class="navbar-brand" href="#" routerLink="/home">
+      <img src="../../../assets/images/Vector.png" alt="Logo">
+      Safiri
+     </a>
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleCollapsed()">
+       <i class="fa fa-bars" aria-hidden="true"></i>
+     </button>
+
+     <div class="collapse navbar-collapse flex-grow-0" id="navbarTogglerDemo02" [ngClass]="{'collapse': collapsed, 'navbar-collapse': true}">
+
+      <ul class="navbar-nav mr-right mt-2 mt-lg-0">
+        <li class="nav-item mx-4">
+          <a class="nav-link" routerLink="/home">ABOUT US</a>
+        </li>
+        <li class="nav-item mx-4">
+          <a class="nav-link" routerLink="/home">SAVINGS</a>
+        </li>
+        <li class="nav-item mx-4">
+          <a class="nav-link" routerLink="/home">ACCOUNT</a>
+        </li>
+
+         <li class="nav-item mx-4">
+           <button class="btn btn-outline-danger" style="cursor: pointer;" (click)="logout()">LOG OUT</button>
+         </li>
+       </ul>
+     </div>
+  </div>
+</nav>
