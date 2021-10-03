@@ -1,0 +1,26 @@
+.header-section{
+  background: url("../../../../assets/images/account-header.jpg") no-repeat center;
+  margin-top: -120px;
+}
+
+.header-text{
+  margin-top: 20%;
+}
+
+.header-title{
+  font-weight: bolder;
+  color: #fff;
+}
+
+.header-subtitle{
+  color: #fff;
+}
+
+select,
+input{
+  background: rgba(34, 36, 40, 0.05);
+  border: 1px solid rgba(34, 36, 40, 0.1);
+  box-sizing: border-box;
+  border-radius: 4px;
+  color: gray;
+}

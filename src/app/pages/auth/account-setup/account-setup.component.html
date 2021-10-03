@@ -1,1 +1,143 @@
-<p>account-setup works!</p>
+<section class="header-section pb-5">
+  <div class="container">
+    <div class="row mt-3 pd-4">
+      <div class="col-sm-7">
+        <div class="header-text">
+          <h1 class="header-title">
+            Manage your savings for <br> your travel plans
+          </h1>
+          <p class="header-subtitle">
+            Travellers in the 17th century travelled carrying their money in sacks, but you can travel carrying your own funds on your device. Setup your account;
+          </p>
+        </div>
+      </div>
+      <div class="col-sm-5">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-bold">Set up your account</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <form>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group mt-3">
+                <label for="country">Destination</label>
+                <select class="form-control" id="country">
+                  <option *ngFor="let country of countries" value="country.name">{{country.name}}</option>
+                </select>
+              </div>
+
+              <div class="form-group mt-3">
+                <label for="budget">Budget</label>
+                <select class="form-control" id="budget">
+                  <option value="1000">$1000</option>
+                  <option value="2000">$2000</option>
+                  <option value="4000">$4000</option>
+                  <option value="8000">$8000</option>
+                  <option value="10000">$10000</option>
+                </select>
+              </div>
+
+              <div class="form-group mt-3">
+                <label for="recurrence">How will you prefer to save?</label>
+                <select class="form-control" id="recurrence">
+                  <option value="daily">Daily</option>
+                  <option value="weekly">Weekly</option>
+                  <option value="monthly">Monthly</option>
+                </select>
+              </div>
+
+              <div class="form-group mt-3">
+                <label for="amount">Amount to save per time</label>
+                <select class="form-control" id="amount">
+                  <option value="100">$100</option>
+                  <option value="200">$200</option>
+                  <option value="500">$500</option>
+                  <option value="1000">$1000</option>
+                </select>
+              </div>
+
+            </div>
+
+
+            <div class="col-md-6 ">
+              <div class="form-group mt-3">
+                <label for="date">Day of the month</label>
+                <select class="form-control" id="date">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                  <option value="21">21</option>
+                  <option value="22">22</option>
+                  <option value="23">23</option>
+                  <option value="24">24</option>
+                  <option value="25">25</option>
+                  <option value="26">26</option>
+                  <option value="27">27</option>
+                  <option value="28">28</option>
+                  <option value="29">29</option>
+                  <option value="30">30</option>
+                </select>
+              </div>
+
+                <div class="form-group mt-3">
+                  <label for="time">Preferred time</label>
+                  <input type="time" class="form-control" id="time">
+                </div>
+
+              <div class="form-group mt-3">
+                <label for="source">Where should the funds come from?</label>
+                <select class="form-control" id="source">
+                  <option value="bank">Use bank card</option>
+                  <option value="momo">Use momo</option>
+                </select>
+              </div>
+
+              <div class="form-group mt-3">
+                <label for="start">When do you want to start?</label>
+                <select class="form-control" id="start">
+                  <option value="immediately">Start now</option>
+                  <option value="next week">Next Week</option>
+                  <option value="next month">Next Month</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn btn-primary mt-3 safiri-btn pull-right">Done</button>
+
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
