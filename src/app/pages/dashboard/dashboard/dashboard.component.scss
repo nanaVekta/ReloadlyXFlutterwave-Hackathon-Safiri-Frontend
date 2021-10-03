@@ -4,12 +4,27 @@
   padding: 30px 0;
 }
 
+.safiri-card-sm{
+  text-align: center;
+  border: none;
+  padding: 15px 0;
+  cursor: pointer;
+}
+
+.safiri-card-sm:hover{
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
 .safiri-blue-card{
   background-color: #DCEEF5;
 }
 
 .safiri-blue-card .card-title{
   color: #0692C4;
+}
+
+.safiri-blue-card-sm:hover{
+  border: 1px solid #0692C4;
 }
 
 .safiri-green-card{
@@ -20,10 +35,40 @@
   color: #1FC406;
 }
 
+.safiri-green-card-sm:hover{
+  border: 1px solid #1FC406;
+}
+
 .safiri-red-card{
   background-color: #F7E4E4;
 }
 
 .safiri-red-card .card-title{
   color: #C4060C;
+}
+.safiri-card-sm .safiri-red-card:hover{
+  border: 1px solid #C4060C;
+}
+
+.safiri-yellow-card{
+  background-color: #FAF8C8;
+}
+
+.safiri-yellow-card .card-title{
+  color: #C4BE06;
+}
+.safiri-yellow-card:hover{
+  border: 1px solid #C4BE06;
+}
+
+.safiri-purple-card{
+  background-color: #F7E4F7;
+}
+
+.safiri-purple-card .card-title{
+  color: #C106C4;
+}
+
+.safiri-purple-card:hover{
+  border: 1px solid #C106C4;
 }

@@ -8,6 +8,16 @@
   // margin-left: 20%;
 }
 
+@media (max-width: 991.98px) {
+  .header-section{
+    margin-top: -150px;
+  }
+
+  .header-text{
+    margin-top: 50%;
+  }
+}
+
 .header-title{
   font-weight: bolder;
   color: #fff;
