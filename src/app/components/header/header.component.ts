@@ -25,6 +25,7 @@ export class HeaderComponent implements OnInit {
   }
 
   goToDashboard(): void {
+    console.log('go to dashboard');
     this.router.navigate(['/dashboard']);
   }
 }

@@ -34,6 +34,7 @@
               <div class="form-group mt-3">
                 <label for="country">Destination</label>
                 <select class="form-control" id="country" formControlName="destination" [ngClass]="{ 'is-invalid': submitted && f.destination.errors }">
+                  <option value="" selected disabled></option>
                   <option *ngFor="let country of countries" value="country.name">{{country.name}}</option>
                 </select>
                 <div *ngIf="submitted && f.destination.errors" class="invalid-feedback">

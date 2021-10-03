@@ -199,7 +199,7 @@ export class AccountSetupComponent implements OnInit, OnDestroy {
     private ngxuiloader: NgxUiLoaderService,
     private authService: AuthService,
     private router: Router,
-    private toastr: ToastrService
+    private toastr: ToastrService,
   ) { }
 
   ngOnInit(): void {
@@ -232,6 +232,12 @@ export class AccountSetupComponent implements OnInit, OnDestroy {
         (res: any) => {
           this.responseData = res;
           this.ngxuiloader.stop();
+          let user = this.authService.userValue;
+
+          user.user.account_setted = 1;
+
+          this.authService.updateUserData(user);
+
           const safiriSwal = Swal.mixin({
             customClass: {
               confirmButton: 'btn btn-primary safiri-btn',

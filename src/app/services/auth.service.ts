@@ -31,6 +31,13 @@ export class AuthService {
     this.userSubject.next(user);
   }
 
+  updateUserData(user: User) {
+    localStorage.removeItem('safiriUser');
+    localStorage.setItem('safiriUser', JSON.stringify(user));
+    this.userSubject.next(null);
+    this.userSubject.next(user);
+  }
+
   logout() {
     // remove user from local storage and set current user to null
     localStorage.removeItem('safiriUser');
