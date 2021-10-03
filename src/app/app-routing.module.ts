@@ -1,3 +1,4 @@
+import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
 import { LandingLayoutComponent } from './layouts/landing-layout/landing-layout.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -23,6 +24,14 @@ const routes: Routes = [
     children: [{
       path: '',
       loadChildren: () => import('./layouts/auth-layout/auth-layout.module').then(m => m.AuthLayoutModule)
+    }]
+  },
+  {
+    path: 'dashboard',
+    component: DashboardLayoutComponent,
+    children: [{
+      path: '',
+      loadChildren: () => import('./layouts/dashboard-layout/dashboard-layout.module').then(m => m.DashboardLayoutModule)
     }]
   }
 ];

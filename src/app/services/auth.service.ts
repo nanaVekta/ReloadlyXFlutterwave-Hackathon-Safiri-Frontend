@@ -42,4 +42,8 @@ export class AuthService {
     return this.http.post(`${environment.apiUrl}auth/register`, formData, {observe: 'response'});
   }
 
+  addAccount(formData: any) {
+    return this.http.post(`${environment.apiUrl}account`, formData, {observe: 'response'});
+  }
+
 }

@@ -10,12 +10,14 @@ import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
+import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingLayoutComponent,
     AuthLayoutComponent,
+    DashboardLayoutComponent,
   ],
   imports: [
     BrowserModule,

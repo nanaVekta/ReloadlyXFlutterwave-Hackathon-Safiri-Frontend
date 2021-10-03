@@ -28,44 +28,56 @@
 
     <div class="row">
       <div class="col-12">
-        <form>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
           <div class="row">
             <div class="col-md-6">
               <div class="form-group mt-3">
                 <label for="country">Destination</label>
-                <select class="form-control" id="country">
+                <select class="form-control" id="country" formControlName="destination" [ngClass]="{ 'is-invalid': submitted && f.destination.errors }">
                   <option *ngFor="let country of countries" value="country.name">{{country.name}}</option>
                 </select>
+                <div *ngIf="submitted && f.destination.errors" class="invalid-feedback">
+                  <div>select destination</div>
+                </div>
               </div>
 
               <div class="form-group mt-3">
                 <label for="budget">Budget</label>
-                <select class="form-control" id="budget">
+                <select class="form-control" id="budget" formControlName="budget" [ngClass]="{ 'is-invalid': submitted && f.budget.errors }">
                   <option value="1000">$1000</option>
                   <option value="2000">$2000</option>
                   <option value="4000">$4000</option>
                   <option value="8000">$8000</option>
                   <option value="10000">$10000</option>
                 </select>
+                <div *ngIf="submitted && f.budget.errors" class="invalid-feedback">
+                  <div>select budget</div>
+                </div>
               </div>
 
               <div class="form-group mt-3">
                 <label for="recurrence">How will you prefer to save?</label>
-                <select class="form-control" id="recurrence">
+                <select class="form-control" id="recurrence" formControlName="save_preference" [ngClass]="{ 'is-invalid': submitted && f.save_preference.errors }">
                   <option value="daily">Daily</option>
                   <option value="weekly">Weekly</option>
                   <option value="monthly">Monthly</option>
                 </select>
+                <div *ngIf="submitted && f.save_preference.errors" class="invalid-feedback">
+                  <div>select recurrence</div>
+                </div>
               </div>
 
               <div class="form-group mt-3">
                 <label for="amount">Amount to save per time</label>
-                <select class="form-control" id="amount">
+                <select class="form-control" id="amount" formControlName="amount_to_save" [ngClass]="{ 'is-invalid': submitted && f.amount_to_save.errors }">
                   <option value="100">$100</option>
                   <option value="200">$200</option>
                   <option value="500">$500</option>
                   <option value="1000">$1000</option>
                 </select>
+                <div *ngIf="submitted && f.amount_to_save.errors" class="invalid-feedback">
+                  <div>select amount to save</div>
+                </div>
               </div>
 
             </div>
@@ -74,7 +86,7 @@
             <div class="col-md-6 ">
               <div class="form-group mt-3">
                 <label for="date">Day of the month</label>
-                <select class="form-control" id="date">
+                <select class="form-control" id="date" formControlName="day_of_month" [ngClass]="{ 'is-invalid': submitted && f.day_of_month.errors }">
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -107,28 +119,40 @@
                   <option value="29">29</option>
                   <option value="30">30</option>
                 </select>
+                <div *ngIf="submitted && f.day_of_month.errors" class="invalid-feedback">
+                  <div>select day of month</div>
+                </div>
               </div>
 
                 <div class="form-group mt-3">
                   <label for="time">Preferred time</label>
-                  <input type="time" class="form-control" id="time">
+                  <input type="time" class="form-control" id="time" formControlName="time_of_day" [ngClass]="{ 'is-invalid': submitted && f.time_of_day.errors }">
+                  <div *ngIf="submitted && f.time_of_day.errors" class="invalid-feedback">
+                    <div>select time of day</div>
+                  </div>
                 </div>
 
               <div class="form-group mt-3">
                 <label for="source">Where should the funds come from?</label>
-                <select class="form-control" id="source">
+                <select class="form-control" id="source" formControlName="source_of_funds" [ngClass]="{ 'is-invalid': submitted && f.source_of_funds.errors }">
                   <option value="bank">Use bank card</option>
                   <option value="momo">Use momo</option>
                 </select>
+                <div *ngIf="submitted && f.source_of_funds.errors" class="invalid-feedback">
+                  <div>select source of funds</div>
+                </div>
               </div>
 
               <div class="form-group mt-3">
                 <label for="start">When do you want to start?</label>
-                <select class="form-control" id="start">
+                <select class="form-control" id="start" formControlName="start" [ngClass]="{ 'is-invalid': submitted && f.start.errors }">
                   <option value="immediately">Start now</option>
                   <option value="next week">Next Week</option>
                   <option value="next month">Next Month</option>
                 </select>
+                <div *ngIf="submitted && f.start.errors" class="invalid-feedback">
+                  <div>select when to start</div>
+                </div>
               </div>
 
               <button type="submit" class="btn btn-primary mt-3 safiri-btn pull-right">Done</button>
