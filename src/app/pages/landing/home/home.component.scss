@@ -2,11 +2,21 @@
   background: url("../../../../assets/images/header-bg.jpg") no-repeat center;
   margin-top: -100px;
 }
-
 .header-text{
   margin-top: 20%;
-  // margin-left: 20%;
 }
+
+@media (max-width: 991.98px) {
+  .header-section{
+    margin-top: -150px;
+  }
+
+  .header-text{
+    margin-top: 50%;
+  }
+}
+
+
 
 .header-title{
   font-weight: bolder;
