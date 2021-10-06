@@ -3,11 +3,13 @@ import { DashboardComponent } from './../../pages/dashboard/dashboard/dashboard.
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(DashboardLayoutRoutes)
+    RouterModule.forChild(DashboardLayoutRoutes),
+    NgxChartsModule
   ],
   declarations: [
     DashboardComponent

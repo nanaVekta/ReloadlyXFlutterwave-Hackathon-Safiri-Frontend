@@ -89,4 +89,36 @@
     </div>
 
   </div>
+
+  <div class="row mt-4">
+    <div class="col-12">
+      <h4 class="text-bold">Spending analytics</h4>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-md-6">
+      <p>Amount spent so far: $180,000</p>
+      <ngx-charts-bar-vertical
+          [view]="[0,400]"
+          [results]="saleData"
+          [legend]="false"
+          [xAxis]="true"
+          [yAxis]="true"
+          [gradient]="false">
+
+      </ngx-charts-bar-vertical>
+    </div>
+    <div class="col-md-6">
+      <p>Average country by country cost</p>
+      <ngx-charts-pie-chart
+        [results]="costData"
+        [legend]="false"
+        [labels]="false"
+        [legendTitle]="'Average country by cost'"
+        [view]="[0,400]"
+        [labels]="true" >
+    </ngx-charts-pie-chart>
+    </div>
+  </div>
 </div>
